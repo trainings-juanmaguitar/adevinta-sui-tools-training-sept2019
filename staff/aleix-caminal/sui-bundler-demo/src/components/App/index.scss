@@ -1,0 +1,56 @@
+@import '../../index';
+
+$color-navbar-background: #111;
+$color-navbar-text: #fff;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: $height-navbar;
+  min-height: calc(100vh - #{$height-navbar});
+
+  &-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: $height-navbar;
+    background-color: $color-navbar-background;
+    color: $color-navbar-text;
+
+    &__title {
+      margin: 0;
+      padding: 0 3rem;
+      font-weight: 400;
+      font-size: 24px;
+    }
+
+    &__menu {
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+      margin: 0;
+      padding: 0 3rem;
+    }
+
+    &__item {
+      * {
+        color: $color-navbar-text;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      & + .app-navbar__item {
+        padding-left: 2rem;
+      }
+    }
+  }
+}
