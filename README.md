@@ -106,7 +106,7 @@ Routing en Web App
 Algunas implementaciones del pet project:
 
 - La versión del **profesor** → con gestión de favoritos y logs acciones
-  - 📄 [Repo](https://github.com/trainings-juanmaguitar/adevinta-sui-tools-training-sept2019/blob/devel/stuff/demos/schibsted-frontend-mv-project/README.md) 
+  - 📄 [Repo](https://github.com/trainings-juanmaguitar/adevinta-sui-tools-training-sept2019/blob/devel/stuff/final-project/schibsted-frontend-mv-project/README.md) 
   - 🌍 [Demo Online](https://20190116-1547675909-spa-mock-production-tqwqacidkh.now.sh/)
 
 - La versión de **alumnos** de ediciones pasadas: 
