@@ -49,7 +49,7 @@ Also set these rules
 }
 ```
 
-### Firebase in Domain
+### Firebase in Domain (`frontend-mv--lib-movies`)
 
 This app relies on a firebase app so after you have created a new project in firebase
 
@@ -63,7 +63,7 @@ And choose your firebase project
 
 Once this is done you can run from `frontend-mv--lib-movies` the script `npm run createfirebaseconf` to automatically generate the `firebase-config.json` at `frontend-mv--lib-movies/src/config/firebase`
 
-### Firebase in Web App
+### Firebase in Web App (`frontend-mv--web-app`)
 
 This app relies on a firebase app so after you have created a new project in firebase
 
