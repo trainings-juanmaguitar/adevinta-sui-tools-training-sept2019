@@ -49,10 +49,10 @@ var envConfig = {
 var environment = process.env.NODE_ENV;
 
 var Config = function () {
-  function Config() {
+  function Config(propsConfig) {
     (0, _classCallCheck3.default)(this, Config);
 
-    this._config = (0, _extends3.default)({}, _base2.default, envConfig[environment]);
+    this._config = (0, _extends3.default)({}, propsConfig, _base2.default, envConfig[environment]);
   }
 
   /**

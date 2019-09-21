@@ -2,19 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker'
 
 const obj = {
-    foo: {
-      bar: {
-        baz: 42,
-      },
-    },
-  };
-  
-  const baz = obj?.foo?.bar?.baz; // 42
-  
-  const safe = obj?.qux?.baz; // undefined
+  foo: {
+    bar: {
+      baz: 42
+    }
+  }
+}
+
+const baz = obj?.foo?.bar?.baz // 42
+
+const safe = obj?.qux?.baz // undefined
+
+console.log(safe)
+console.log(baz)
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

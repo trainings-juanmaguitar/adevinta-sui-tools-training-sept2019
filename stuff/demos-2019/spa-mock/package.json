@@ -1,0 +1,58 @@
+{
+  "name": "spa_mock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev:spa",
+    "dev:spa": "sui-bundler dev",
+    "dev:ssr": "sui-bundler build -C && sui-ssr build -C && node server",
+    "co": "sui-mono commit",
+    "lint": "sui-lint js --fix && sui-lint sass",
+    "precommit": "sui-precommit run",
+    "spa:deploy": "echo CDN: $CDN && surge -d $CDN /tmp/server-src-$DATE/public",
+    "spa:deploy:target": "export NODE_ENV=development && export SUBDOMAIN=target-poc-react-$NODE_ENV && export CDN=https://$SUBDOMAIN.surge.sh/ && echo CDN: $CDN && sui-bundler build -C && cp ./public/index.html ./public/200.html && surge -d $CDN ./public",
+    "ssr:archive": "npm run ssr:build && cp -R statics/ public/ && cp public/index.html public/200.html && sui-ssr archive -C > /tmp/server-src-$DATE.zip",
+    "ssr:build": "sui-bundler build -C && sui-ssr build -C",
+    "ssr:deploy": "export DATE=`date \"+%Y%m%d-%s\"` && export CDN=https://$SUBDOMAIN.surge.sh/ && npm run ssr:archive && unzip -o /tmp/server-src-$DATE.zip -d /tmp/server-src-$DATE || true && npm run spa:deploy && sui-deploy $SUBDOMAIN /tmp/server-src-$DATE --now",
+    "ssr:deploy:development": "export NODE_ENV=development && export SUBDOMAIN=spa-mock-$NODE_ENV && npm run ssr:deploy",
+    "ssr:deploy:pr": "export NODE_ENV=development && export SUBDOMAIN=spa-mock-$NODE_ENV-PR-$TRAVIS_PULL_REQUEST && npm run ssr:deploy",
+    "ssr:deploy:production": "export NODE_ENV=production && export SUBDOMAIN=spa-mock-$NODE_ENV && npm run ssr:deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "sui-bundler": {
+    "externals-manifest": "https://spa-mock-statics.surge.sh/manifest.json"
+  },
+  "dependencies": {
+    "@s-ui/abtesting-optimizely-x": "1",
+    "@s-ui/component-peer-dependencies": "1",
+    "@s-ui/hoc": "1",
+    "@s-ui/i18n": "1",
+    "@s-ui/react-initial-props": "2",
+    "isomorphic-fetch": "2.2.1"
+  },
+  "devDependencies": {
+    "@s-ui/bundler": "5",
+    "@s-ui/deploy": "2",
+    "@s-ui/lint": "3",
+    "@s-ui/mono": "1",
+    "@s-ui/precommit": "2",
+    "@s-ui/ssr": "5",
+    "husky": "3.0.5"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": "@s-ui/mono/src/types"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@s-ui/lint/eslintrc.js"
+    ]
+  },
+  "stylelint": {
+    "extends": "./node_modules/@s-ui/lint/stylelint.config.js"
+  }
+}

@@ -43,8 +43,8 @@ Montar proyectos Schibsted con zero config → https://medium.com/@midudev/webpa
 
 ### Convenio `src/app.js` e `src/index.html`
 
-`app.js` → punto de entrada de nuestra app
-`index.html` → pagina html
+- `app.js` → punto de entrada de nuestra app
+- `index.html` → pagina html
 
 **`src/index.html`**
 ```
@@ -54,6 +54,12 @@ Montar proyectos Schibsted con zero config → https://medium.com/@midudev/webpa
 ### [React dependencies](https://youtu.be/0Q1p1cXI_64?t=532)
 
 Podemos usar [`sui-component-peer-dependencies`](https://github.com/SUI-Components/sui/tree/master/packages/sui-component-peer-dependencies)
+
+```
+npm install @s-ui/component-peer-dependencies -SE
+```
+
+Lo cual nos instalará de golpe...
 
 ```
   "dependencies": {
@@ -102,7 +108,9 @@ Y para [integración con nuestro IDE](https://github.com/SUI-Components/sui/tree
 "eslintConfig": {
   "extends": ["./node_modules/@s-ui/lint/eslintrc.js"]
 },
-"sasslintConfig": "./node_modules/@s-ui/lint/sass-lint.yml"
+"stylelint": {
+  "extends": "./node_modules/@s-ui/lint/stylelint.config.js"
+}
 ```
 
 Con esto [evitamos los _dot-files_](https://youtu.be/0Q1p1cXI_64?t=980) que son → la raíz de la divergencia
