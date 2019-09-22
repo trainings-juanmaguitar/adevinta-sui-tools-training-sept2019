@@ -17,7 +17,8 @@ domain
 import(/* webpackChunkName: "my-chunk-name" */ './foo').then(
   ({default: foo}) => {
     console.log('loaded async chunk')
-    foo()
+    const fooValue = foo()
+    console.log({fooValue})
   }
 )
 
