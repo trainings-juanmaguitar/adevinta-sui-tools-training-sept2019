@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node src/index.js",
     "start": "node lib/index.js",
+    "dev": "npm build && npm start",
     "lint:js": "eslint src/",
     "lint:js:fix": "eslint --fix src/",
     "build": "babel src -d lib"
