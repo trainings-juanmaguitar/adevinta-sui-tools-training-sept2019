@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "phoenix": "sui-mono phoenix",
     "co": "sui-mono commit",
     "start": "sui-bundler dev",
     "lint:js": "sui-lint js",
