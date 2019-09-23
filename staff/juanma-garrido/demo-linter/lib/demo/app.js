@@ -3,7 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.b = exports.a = void 0;
 var a = 1;
-var _default = a;
-exports["default"] = _default;
+exports.a = a;
+var b = 2;
+exports.b = b;
