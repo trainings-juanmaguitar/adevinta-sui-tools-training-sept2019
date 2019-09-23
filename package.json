@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/trainings-juanmaguitar/schibsted-sui-tools-training#readme",
   "dependencies": {
-    "@s-ui/mono": "1",
+    "@s-ui/mono": "^1.43.0",
     "husky": "1.2.1"
   },
   "private": true,
