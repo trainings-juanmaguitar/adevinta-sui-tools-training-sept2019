@@ -8,7 +8,8 @@
     "lint:js": "sui-lint js",
     "lint:js:fix": "sui-lint js --fix",
     "lint:sass": "sui-lint sass",
-    "ssr": "sui-bundler build -C && sui-ssr build -C && node server"
+    "ssr": "sui-bundler build -C && sui-ssr build -C && node server",
+    "co": "sui-mono commit"
   },
   "keywords": [],
   "author": "",
