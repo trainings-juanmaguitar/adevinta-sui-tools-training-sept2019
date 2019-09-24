@@ -10,7 +10,7 @@
     "lint:sass": "sui-lint sass",
     "ssr": "sui-bundler build -C && sui-ssr build -C && node server",
     "co": "sui-mono commit",
-    "phoenix": "sui-mono-phoenix"
+    "phoenix": "sui-mono phoenix"
   },
   "keywords": [],
   "author": "",
