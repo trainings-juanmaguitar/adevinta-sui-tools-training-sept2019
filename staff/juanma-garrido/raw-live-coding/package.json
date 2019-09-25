@@ -1,0 +1,31 @@
+{
+  "name": "raw-live-coding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@s-ui/domain": "1",
+    "firebase": "^6.6.2",
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
+  },
+  "devDependencies": {
+    "@s-ui/bundler": "5",
+    "@s-ui/lint": "3"
+  },
+  "scripts": {
+    "start": "sui-bundler dev",
+    "phoenix": "rm -Rf node_modules && rm package-lock.json && npm install --prefer-online"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@s-ui/lint/eslintrc.js"
+    ]
+  },
+  "stylelint": {
+    "extends": "./node_modules/@s-ui/lint/stylelint.config.js"
+  }
+}
