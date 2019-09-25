@@ -10,11 +10,16 @@ const LoadHomePage = loadPage(contextFactory, () =>
   import(/* webpackChunkName: "Home" */ './pages/Home')
 )
 
+const LoadListPage = loadPage(contextFactory, () =>
+  import(/* webpackChunkName: "List" */ './pages/List')
+)
+
 export default (
   <Router>
     <Route component={App}>
       <Route path="/">
         <IndexRoute getComponent={LoadHomePage} />
+        <Route path="/list" getComponent={LoadListPage} />
       </Route>
     </Route>
   </Router>

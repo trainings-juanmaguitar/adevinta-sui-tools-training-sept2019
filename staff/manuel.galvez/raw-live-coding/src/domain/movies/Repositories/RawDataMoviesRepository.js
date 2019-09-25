@@ -7,19 +7,23 @@ export default class RawDataMoviesRepository extends MoviesRepository {
     this._movieEntityFactory = movieEntityFactory
   }
 
-  async all() {
+  async popularMovies() {
     return [
       {
         id: 1,
-        title: 'Fight Club',
-        year: 1996,
-        director: 'David Fincher'
+        title: 'Back To The Future',
+        overview: 'Marty gets back to the future...',
+        language: 'en-EN',
+        release: 1985,
+        posterPath: 'cover.jpg'
       },
       {
         id: 2,
-        title: 'Matrix',
-        year: 1999,
-        director: 'The Wachowskis'
+        title: 'Rocky',
+        overview: 'Rocky almost win...',
+        language: 'en-EN',
+        release: 1976,
+        posterPath: 'cover.jpg'
       }
     ].map(this._movieEntityFactory)
   }
