@@ -8,22 +8,22 @@ export default class FirebasePodcastsRepository extends PodcastsRepository {
   }
 
   async all() {
-    const db = this._config.get('firebaseDB')
-    const podcastsSnapshots = await db.collection('podcasts').get()
-    const podcasts = []
-    podcastsSnapshots.forEach(doc =>
-      podcasts.push(this._podcastEntityFactory(doc.data()))
-    )
+    // const db = this._config.get('firebaseDB')
+    // const podcastsSnapshots = await db.collection('podcasts').get()
+    // const podcasts = []
+    // podcastsSnapshots.forEach(doc =>
+    //   podcasts.push(this._podcastEntityFactory(doc.data()))
+    // )
 
-    return podcasts
+    // return podcasts
 
-    // return [
-    //   {
-    //     id: 1,
-    //     title: 'Web Components',
-    //     url: 'http://me.com',
-    //     date: Date.now()
-    //   }
-    // ].map(this._podcastEntityFactory)
+    return [
+      {
+        id: 1,
+        title: 'Web Components',
+        url: 'http://me.com',
+        date: Date.now()
+      }
+    ].map(this._podcastEntityFactory)
   }
 }
