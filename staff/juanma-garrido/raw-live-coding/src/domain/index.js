@@ -4,7 +4,9 @@
 
 import {EntryPointFactory} from '@s-ui/domain'
 import Config from './config/'
+
 import PodcastsUseCasesFactory from './podcasts/UseCases/factory'
+import MoviesUseCasesFactory from './movies/UseCases/factory'
 
 // const fb = firebase.initializeApp({
 //   apiKey: 'AIzaSyBCi-p6yeuD1T0DELxci0dDnF6sNSW3ZJ8',
@@ -22,7 +24,10 @@ const config = new Config({})
 // config.set('firebaseDB', firebaseDB)
 
 const useCases = {
-  list_podcasts_use_case: PodcastsUseCasesFactory.listPodcastsUseCase({config})
+  list_podcasts_use_case: PodcastsUseCasesFactory.listPodcastsUseCase({config}),
+  list_popular_movies_use_case: MoviesUseCasesFactory.listPopularMoviesUseCase({
+    config
+  })
 }
 
 const Domain = EntryPointFactory({useCases})
