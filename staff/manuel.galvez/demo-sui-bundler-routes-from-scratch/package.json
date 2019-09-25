@@ -15,7 +15,8 @@
   "license": "ISC",
   "devDependencies": {
     "@s-ui/bundler": "5.29.0",
-    "@s-ui/component-peer-dependencies": "^1.7.0"
+    "@s-ui/component-peer-dependencies": "^1.7.0",
+    "@s-ui/ssr": "5.21.0"
   },
   "dependencies": {
     "@s-ui/hoc": "1.19.0",

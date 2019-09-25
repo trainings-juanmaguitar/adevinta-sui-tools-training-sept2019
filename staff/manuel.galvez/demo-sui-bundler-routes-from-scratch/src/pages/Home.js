@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 
-const Home = (_, {i18n}) => (
+const Home = (_, {domain, name}) => (
   <React.Fragment>
     <Helmet>
       <link rel="canonical" href="http://spa.mock/" />
@@ -11,6 +11,9 @@ const Home = (_, {i18n}) => (
   </React.Fragment>
 )
 
-Home.contextTypes = {i18n: PropTypes.object}
+Home.contextTypes = {
+  domain: PropTypes.object,
+  name: PropTypes.string
+}
 
 export default Home
