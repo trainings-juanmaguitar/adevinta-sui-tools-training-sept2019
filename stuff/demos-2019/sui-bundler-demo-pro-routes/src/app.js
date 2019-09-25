@@ -22,13 +22,6 @@ import(/* webpackChunkName: "my-chunk-name" */ './foo').then(
   }
 )
 
-import {register} from '@s-ui/bundler/registerServiceWorker'
-
-register({
-  first: () => window.alert('Content is cached for offline use.'),
-  renovate: () => window.alert('New content is available; please refresh.')
-})();
-
 // https://webpack.js.org/guides/hmr-react/#components/sidebar/sidebar.jsx
 const render = Component =>
   ReactDOM.render(
@@ -37,3 +30,8 @@ const render = Component =>
     </AppContainer>,
     document.getElementById('root')
   )
+render(Hello)
+
+if (module.hot) {
+  module.hot.accept('./hello', () => render(require('./hello').default))
+}
