@@ -23,7 +23,7 @@ contextFactory(createClientContextFactoryParams()).then(context => {
 
       // componente Router le pasamos las rutas via renderProps
       // renderProps contiene directamente children pasar
-      console.log(renderProps)
+      console.log({renderProps})
 
       ReactDOM.render(<App {...renderProps} />, document.getElementById('app'))
     }
