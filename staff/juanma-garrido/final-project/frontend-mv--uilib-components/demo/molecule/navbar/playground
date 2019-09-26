@@ -1,0 +1,10 @@
+const options = ['John', 'Paul', 'George', 'Ringo']
+
+return (
+    <div>
+        <h2>Navbar w/ custom language</h2>
+        <MoleculeNavbar languages={['it-IT']}/>
+        <h2>Navbar w/ custom options</h2>
+        <MoleculeNavbar options={options}/>
+    </div>
+)

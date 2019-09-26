@@ -3,13 +3,21 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 
-const List = ({movies, title}) => {
+import MoleculeNavbar from '../../../../frontend-mv--uilib-components/components/molecule/navbar/src/index'
+import './index.scss'
+
+const List = ({movies, title}, {router}) => {
+
+  const handleChangeOption = (e, {value}) => {
+    router.push(`/${value}`)
+  }
 
   return (
     <React.Fragment>
       <Helmet>
         <link rel="canonical" href="http://spa.mock/" />
       </Helmet>
+      <MoleculeNavbar onChangeOption={handleChangeOption} options={['popular', 'now_playing']} languages={['es-ES', 'en-GB']}/>
       <h1>{title}</h1>
       <ul>
         {
@@ -20,6 +28,11 @@ const List = ({movies, title}) => {
       </ul>
     </React.Fragment>
   )
+  
+}
+
+List.contextTypes = {
+  router: PropTypes.object
 }
 
 

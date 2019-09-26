@@ -11,7 +11,7 @@ const LoadHomePage = loadPage(contextFactory, () =>
 )
 
 const LoadListPage = loadPage(contextFactory, () =>
-  import(/* webpackChunkName: "List" */ './pages/List')
+  import(/* webpackChunkName: "List" */ './pages/List/')
 )
 
 export default (

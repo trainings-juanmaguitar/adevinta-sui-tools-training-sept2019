@@ -1,0 +1,17 @@
+@import '~@schibstedspain/sui-theme/lib/index';
+@import '~@schibstedspain/sui-atom-button/lib/index';
+@import '~@s-ui/react-molecule-select/lib/index';
+@import '~@s-ui/react-molecule-dropdown-option/lib/index';
+
+.sui-MoleculeNavbar {
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  &-logo {
+    
+  }
+  &-categories {
+    width: 20%;
+  }
+}
