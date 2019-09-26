@@ -4,7 +4,7 @@ import ListPopularMoviesUseCase from './ListPopularMoviesUseCase'
 export default class MoviesUseCasesFactory {
   static listPopularMoviesUseCase = ({config}) =>
     new ListPopularMoviesUseCase({
-      repository: MoviesRepositoriesFactory.rawDataMoviesRepository({
+      repository: MoviesRepositoriesFactory.httpMoviesRepository({
         config
       })
     })

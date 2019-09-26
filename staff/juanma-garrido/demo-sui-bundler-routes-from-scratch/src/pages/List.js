@@ -12,8 +12,8 @@ const List = ({movies}) => {
       <h1>List test title</h1>
       <ul>
         {
-          movies && movies.length && movies.map(movie => (
-            <li>{movie.title}</li>
+          movies && movies.length && movies.map((movie, index) => (
+            <li key={index}>{movie.title}</li>
           ))
         }
       </ul>
