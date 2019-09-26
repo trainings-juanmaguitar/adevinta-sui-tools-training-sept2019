@@ -7,14 +7,16 @@ export default class RawDataMoviesRepository extends MoviesRepository {
     this._config = config
     this._movieEntityFactory = movieEntityFactory
     this._fetcher = fetcher
+
+    const BASE_URL = this._config.get('THEMOVIEDB_API_BASE_URL')
+    const API_KEY = this._config.get('API_KEY')
+
+    this._URL_TEMPLATE = `${BASE_URL}<%ENDPOINT_USE_CASE%>?api_key=${API_KEY}`
   }
 
   async popularMovies() {
-    const BASE_URL = this._config.get('THEMOVIEDB_API_BASE_URL')
     const ENDPOINT_POPULAR = this._config.get('POPULAR_MOVIES_ENDPOINT')
-    const API_KEY = this._config.get('API_KEY')
-
-    const URL = `${BASE_URL}${ENDPOINT_POPULAR}?api_key=${API_KEY}`
+    const URL = this._URL_TEMPLATE.replace('<%ENDPOINT_USE_CASE%>', ENDPOINT_POPULAR)
 
     const dataMovies = await this._fetcher.get(URL)
     const {data : { results: movies }} = dataMovies
