@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{O3aY:function(e,n,t){"use strict";t.r(n);var a=t("mXGw"),l=t.n(a),c=t("tj/o"),r=t.n(c);t("W0B4");n.default=function(e){return l.a.createElement(l.a.Fragment,null,l.a.createElement(r.a,null,l.a.createElement("link",{rel:"canonical",href:"http://spa.mock/"})),l.a.createElement("h1",null,"Home test title"))}}}]);
