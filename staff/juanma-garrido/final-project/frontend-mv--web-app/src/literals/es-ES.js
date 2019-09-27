@@ -26,5 +26,7 @@ module.exports = {
   LOGIN_WITH_FACEBOOK: 'Entra con tu cuenta de Facebook',
   FAVORITES_MOVIES_TITLE: 'Mis Peliculas Favoritas',
   FAVORITE_MOVIES: '%{totalResults} Peliculas favoritas',
-  NOW_PLAYING_MOVIES_TITLE: 'Peliculas en Cartelera'
+  NOW_PLAYING_MOVIES_TITLE: 'Peliculas en Cartelera',
+  SPANISH: 'Español',
+  ENGLISH: 'Inglés'
 }
