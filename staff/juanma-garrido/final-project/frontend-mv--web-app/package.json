@@ -22,8 +22,10 @@
     "@s-ui/hoc": "1.19.0",
     "@s-ui/i18n": "1.18.0",
     "@s-ui/lint": "3.9.0",
+    "@s-ui/react-atom-input": "^3.12.0",
     "@s-ui/react-initial-props": "2.7.0",
-    "@s-ui/ssr": "5.21.0"
+    "@s-ui/ssr": "5.21.0",
+    "@schibstedspain/sui-atom-button": "^1.29.0"
   },
   "eslintConfig": {
     "extends": [

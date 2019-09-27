@@ -21,6 +21,7 @@ export default (
         <IndexRoute getComponent={LoadHomePage} />
         <Route path="/popular" getComponent={LoadListPage} />
         <Route path="/now_playing" getComponent={LoadListPage} />
+        <Route path="/s/:query" getComponent={LoadListPage} />
       </Route>
     </Route>
   </Router>

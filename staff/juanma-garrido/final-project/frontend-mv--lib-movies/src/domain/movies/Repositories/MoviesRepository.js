@@ -8,4 +8,8 @@ export default class MoviesRepository extends Repository {
   nowPlayingMovies() {
     throw new Error('[MoviesRepository#nowPlayingMovies] mandatory ')
   }
+
+  searchMovies() {
+    throw new Error('[MoviesRepository#searchMovies] mandatory ')
+  }
 }

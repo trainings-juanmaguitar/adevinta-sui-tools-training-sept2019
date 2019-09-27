@@ -18,6 +18,7 @@ const MoleculeNavbar = ({
   onChangeOption,
   options,
   placeholder,
+  currentOption,
   title
 }) => {
   return (
@@ -28,10 +29,11 @@ const MoleculeNavbar = ({
           placeholder={placeholder}
           onChange={onChangeOption}
           iconArrowDown={<IconArrowDown />}
+          value={currentOption}
         >
-          {options.map((option, i) => (
-            <MoleculeSelectOption key={i} value={option}>
-              {option}
+          {options.map(({text, key}, i) => (
+            <MoleculeSelectOption key={i} value={key}>
+              {text}
             </MoleculeSelectOption>
           ))}
         </MoleculeSelect>
@@ -54,7 +56,8 @@ MoleculeNavbar.propTypes = {
   options: PropTypes.object,
   title: PropTypes.string,
   placeholder: PropTypes.string,
-  onChangeOption: PropTypes.function
+  onChangeOption: PropTypes.function,
+  currentOption: PropTypes.string
 }
 
 MoleculeNavbar.defaultProps = {
@@ -62,7 +65,8 @@ MoleculeNavbar.defaultProps = {
   options: [],
   title: 'My App',
   placeholder: 'Select an option',
-  onChangeOption: () => {}
+  onChangeOption: () => {},
+  currentOption: ''
 }
 
 export default MoleculeNavbar

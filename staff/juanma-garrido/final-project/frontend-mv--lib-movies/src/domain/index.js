@@ -13,7 +13,10 @@ const useCases = {
     {
       config
     }
-  )
+  ),
+  search_movies_use_case: MoviesUseCasesFactory.searchMoviesUseCase({
+    config
+  })
 }
 
 const Domain = EntryPointFactory({useCases})

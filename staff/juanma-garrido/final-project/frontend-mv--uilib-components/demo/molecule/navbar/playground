@@ -1,10 +1,29 @@
-const options = ['John', 'Paul', 'George', 'Ringo']
+const options = [
+  {
+    key: 'JOHN',
+    text: 'John Lennon'
+  },
+  {
+    key: 'PAUL',
+    text: 'Paul McCartney'
+  },
+  {
+    key: 'GEORGE',
+    text: 'George Harrison'
+  },
+  {
+    key: 'RINGO',
+    text: 'Ringo Star'
+  }
+]
 
 return (
-    <div>
-        <h2>Navbar w/ custom language</h2>
-        <MoleculeNavbar languages={['it-IT']}/>
-        <h2>Navbar w/ custom options</h2>
-        <MoleculeNavbar options={options}/>
-    </div>
+  <div>
+    <h2>Navbar w/ custom language</h2>
+    <MoleculeNavbar languages={['it-IT']} />
+    <h2>Navbar w/ custom options</h2>
+    <MoleculeNavbar options={options} onChangeOption={console.log}/>
+    <h2>Navbar w/ custom options and current option selected</h2>
+    <MoleculeNavbar options={options} onChangeOption={console.log} currentOption='GEORGE'/>
+  </div>
 )
