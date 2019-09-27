@@ -49,5 +49,15 @@ export default class RawDataMoviesRepository extends MoviesRepository {
     const {data : { results: movies }} = dataMovies
     return movies.map(this._movieEntityFactory)
   }
+
+  async searchMovies({query}) {
+    const ENDPOINT_SEARCH = this._config.get('SEARCH_MOVIES_ENDPOINT')
+    let URL = this._URL_TEMPLATE.replace('<%ENDPOINT_USE_CASE%>', ENDPOINT_SEARCH)
+    URL += `&query=${query}`
+    
+    const dataMovies = await this._fetcher.get(URL)
+    const {data : { results: movies }} = dataMovies
+    return movies.map(this._movieEntityFactory)
+  }
 }
 // devuelve un array de objetos entidad

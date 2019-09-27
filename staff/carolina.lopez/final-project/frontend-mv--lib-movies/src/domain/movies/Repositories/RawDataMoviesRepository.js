@@ -18,6 +18,7 @@ const moviesFake = [
     posterPath: 'cover.jpg'
   }
 ]
+
 export default class RawDataMoviesRepository extends MoviesRepository {
   constructor({config, movieEntityFactory}) {
     super()
@@ -38,6 +39,10 @@ export default class RawDataMoviesRepository extends MoviesRepository {
   }
 
   async upcomingMovies() {
+    return moviesFake.map(this._movieEntityFactory)
+  }
+
+  async searchMovies() {
     return moviesFake.map(this._movieEntityFactory)
   }
 }

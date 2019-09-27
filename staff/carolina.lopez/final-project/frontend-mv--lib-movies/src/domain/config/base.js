@@ -4,5 +4,6 @@ export default {
   NOW_MOVIES_ENDPOINT: '/movie/now_playing',
   TOP_MOVIES_ENDPOINT: '/movie/top_rated',
   UPCOMING_MOVIES_ENDPOINT: '/movie/upcoming',
+  SEARCH_MOVIES_ENDPOINT: '/search/movie',
   API_KEY: '1afd390c65986759432e8839e6cbd150'
 }

@@ -1,1 +1,11 @@
-@import '~'
+$sz-atom-button: auto;
+
+@import '~@schibstedspain/sui-atom-button/lib/index';
+@import '~@s-ui/react-atom-input/lib/index';
+
+.SearchForm {
+  display: flex;
+  padding: 20px;
+  width: 800px; 
+  margin: 0 auto;
+}

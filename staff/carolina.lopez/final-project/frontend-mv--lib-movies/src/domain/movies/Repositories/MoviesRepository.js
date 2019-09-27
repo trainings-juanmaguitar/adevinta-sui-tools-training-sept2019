@@ -16,4 +16,8 @@ export default class MoviesRepository extends Repository {
   upcomingMovies() {
     throw new Error('[MoviesRepository#upcomingMovies] mandatory ')
   }
+
+  searchMovies() {
+    throw new Error('[MoviesRepository#searchMovies] mandatory ')
+  }
 }
