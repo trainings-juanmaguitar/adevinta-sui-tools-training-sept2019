@@ -7,11 +7,19 @@ import Link from 'react-router/lib/Link'
 console.log('App..') // eslint-disable-line
 
 const App = (props, {i18n, router}) => {
-  // console.log(props, data) // eslint-disable-line
   const {children} = props
   const {
     location: {pathname: currentPath}
-    
+  } = router
+  const changeToEnglish = e => {
+    console.log('changeToEnglish')
+    i18n.setCulture('en-GB')
+    router.push(currentPath)
+  }
+  const changeToSpanish = e => {
+    console.log('changeToSpanish')
+    i18n.setCulture('es-ES')
+    router.push(currentPath)
   }
   return (
     <div className="App">
@@ -20,15 +28,23 @@ const App = (props, {i18n, router}) => {
         <meta name="description" content="Helmet application" />
         <title>SPA MOCK</title>
       </Helmet>
+      <button onClick={changeToEnglish}>English</button>
+      <button onClick={changeToSpanish}>Spanish</button>
       <nav>
         <h1>App</h1>
         <Link to="/">Home</Link>
-        <Link to="/list">List</Link>
+        <Link to="/popular">Popular</Link>
+        <Link to="/now_playing">Now Playing</Link>
       </nav>
       {children}
     </div>
   )
 }
 App.propTypes = {children: PropTypes.element}
+
+App.contextTypes = {
+  i18n: PropTypes.object,
+  router: PropTypes.object
+}
 
 export default App

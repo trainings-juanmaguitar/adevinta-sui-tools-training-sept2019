@@ -19,7 +19,8 @@ export default (
     <Route component={App}>
       <Route path="/">
         <IndexRoute getComponent={LoadHomePage} />
-        <Route path="/list" getComponent={LoadListPage} />
+        <Route path="/popular" getComponent={LoadListPage} />
+        <Route path="/now_playing" getComponent={LoadListPage} />
       </Route>
     </Route>
   </Router>

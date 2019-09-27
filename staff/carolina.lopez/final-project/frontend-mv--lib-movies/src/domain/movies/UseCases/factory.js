@@ -3,6 +3,7 @@ import ListPopularMoviesUseCase from './ListPopularMoviesUseCase'
 import ListNowMoviesUseCase from './ListNowMoviesUseCase'
 import ListTopMoviesUseCase from './ListTopMoviesUseCase'
 import ListUpcomingMoviesUseCase from './ListUpcomingMoviesUseCase'
+import SearchMoviesUseCase from './SearchMoviesUseCase'
 
 export default class MoviesUseCasesFactory {
   static listPopularMoviesUseCase = ({config}) =>
@@ -28,6 +29,13 @@ export default class MoviesUseCasesFactory {
 
   static listUpcomingMoviesUseCase = ({config}) =>
     new ListUpcomingMoviesUseCase({
+      repository: MoviesRepositoriesFactory.httpMoviesRepository({
+        config
+      })
+    })
+
+  static searchMoviesUseCase = ({config}) =>
+    new SearchMoviesUseCase({
       repository: MoviesRepositoriesFactory.httpMoviesRepository({
         config
       })
