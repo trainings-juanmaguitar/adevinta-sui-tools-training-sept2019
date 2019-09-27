@@ -11,7 +11,7 @@ const LoadHomePage = loadPage(contextFactory, () =>
 )
 
 const LoadListPage = loadPage(contextFactory, () =>
-  import(/* webpackChunkName: "List" */ './pages/List')
+  import(/* webpackChunkName: "List" */ './pages/List/')
 )
 
 export default (
@@ -21,6 +21,7 @@ export default (
         <IndexRoute getComponent={LoadHomePage} />
         <Route path="/popular" getComponent={LoadListPage} />
         <Route path="/now_playing" getComponent={LoadListPage} />
+        <Route path="/s/:query" getComponent={LoadListPage} />
       </Route>
     </Route>
   </Router>

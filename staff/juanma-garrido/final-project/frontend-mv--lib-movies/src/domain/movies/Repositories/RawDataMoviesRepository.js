@@ -33,4 +33,8 @@ export default class RawDataMoviesRepository extends MoviesRepository {
   async nowPlayingMovies() {
     return moviesFake.map(this._movieEntityFactory)
   }
+
+  async searchMovies() {
+    return moviesFake.map(this._movieEntityFactory)
+  }
 }

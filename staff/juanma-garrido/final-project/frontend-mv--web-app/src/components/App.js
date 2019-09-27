@@ -11,6 +11,7 @@ const App = (props, {i18n, router}) => {
   const {
     location: {pathname: currentPath}
   } = router
+  console.log(currentPath)
   const changeToEnglish = e => {
     console.log('changeToEnglish')
     i18n.setCulture('en-GB')
