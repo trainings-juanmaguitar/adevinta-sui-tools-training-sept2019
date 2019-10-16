@@ -24,7 +24,11 @@ module.exports = {
   SIGNUP_USER_LABEL: 'correo electrónico',
   LOGIN_WITH_GOOGLE: 'Entra con tu cuenta de Google',
   LOGIN_WITH_FACEBOOK: 'Entra con tu cuenta de Facebook',
-  FAVORITES_MOVIES_TITLE: 'Mis Peliculas Favoritas',
-  FAVORITE_MOVIES: '%{totalResults} Peliculas favoritas',
-  NOW_PLAYING_MOVIES_TITLE: 'Peliculas en Cartelera'
+  FAVORITES_MOVIES_TITLE: 'Mis Películas Favoritas',
+  FAVORITE_MOVIES: '%{totalResults} Películas favoritas',
+  NOW_PLAYING_MOVIES_TITLE: 'Películas en Cartelera',
+  TOP_MOVIES_TITLE: 'Películas top',
+  UPCOMING_MOVIES_TITLE: 'Próximas películas',
+  SPANISH: 'Español',
+  ENGLISH: 'Inglés'
 }

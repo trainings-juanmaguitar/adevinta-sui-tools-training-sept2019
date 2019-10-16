@@ -23,9 +23,9 @@ export default class RawDataMoviesRepository extends MoviesRepository {
     return movies.map(this._movieEntityFactory)
   }
 
-  async nowMovies() {
-    const ENDPOINT_NOW = this._config.get('NOW_MOVIES_ENDPOINT')
-    const URL = this._URL_TEMPLATE.replace('<%ENDPOINT_USE_CASE%>', ENDPOINT_NOW)
+  async nowPlayingMovies() {
+    const ENDPOINT_NOW_PLAYING = this._config.get('NOW_PLAYING_MOVIES_ENDPOINT')
+    const URL = this._URL_TEMPLATE.replace('<%ENDPOINT_USE_CASE%>', ENDPOINT_NOW_PLAYING)
 
     const dataMovies = await this._fetcher.get(URL)
     const {data : { results: movies }} = dataMovies
@@ -59,5 +59,5 @@ export default class RawDataMoviesRepository extends MoviesRepository {
     const {data : { results: movies }} = dataMovies
     return movies.map(this._movieEntityFactory)
   }
+
 }
-// devuelve un array de objetos entidad

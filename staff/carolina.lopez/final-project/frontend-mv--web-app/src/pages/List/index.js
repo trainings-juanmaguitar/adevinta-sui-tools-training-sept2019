@@ -3,65 +3,61 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 
-import MoleculeNavbar from '../../../../frontend-mv--uilib-components/components/molecule/navbar/src/index'
+import Link from 'react-router/lib/Link'
+import MoleculeCard from 'sui-skylab-molecule-card'
+
+import Navbar from '../../components/Navbar/'
 import './index.scss'
 
-const List = ({movies, title, options, currentOption}, {router}) => {
+const LogoLink = <Link to="/">My App</Link>
+const BASE_CLASS = `List`
+const CLASS_ITEM = `${BASE_CLASS}-item`
 
-  console.log({movies, title, options, currentOption})
-  const handleChangeOption = (e, {value}) => {
-    router.push(`/${value}`)
-  }
+const List = (
+  {movies, title, categories, languages, currentOption},
+  {router, i18n}
+) => {
+  console.log({i18n})
 
   return (
     <React.Fragment>
       <Helmet>
         <link rel="canonical" href="http://spa.mock/" />
       </Helmet>
-      <MoleculeNavbar onChangeOption={handleChangeOption} options={options} currentOption={currentOption} languages={['es-ES', 'en-GB']}/>
+      {<Navbar title={LogoLink} />}
       <h1>{title}</h1>
-      <ul>
-        {
-          movies && movies.length && movies.map((movie, index) => (
-            <li onClick={() => alert(movie.overview)} key={index}>{movie.title}</li>
-          ))
-        }
+      <ul className={BASE_CLASS}>
+        {movies &&
+          movies.length && 
+          movies.map(({title, overview, posterPath, language, release}, index) => ( 
+            <li onClick={() => alert(movie.overview)} key={index} className={CLASS_ITEM}>
+              <MoleculeCard title={title}  description={overview} image={`https://image.tmdb.org/t/p/w500/${posterPath}`} language={language} release={release}/>
+            </li>
+          ))}
       </ul>
     </React.Fragment>
   )
-  
 }
 
 List.contextTypes = {
-  router: PropTypes.object
+  router: PropTypes.object,
+  i18n: PropTypes.object
 }
-
 
 List.getInitialProps = async ({context, routeInfo}) => {
   const {domain, i18n} = context
   const {params} = routeInfo
 
-  const commonProps = {
-    options: [
-      {
-        key: 'popular',
-        text: i18n.t('POPULAR_MOVIES_TITLE')
-      },
-      {
-        key: 'now_playing',
-        text: i18n.t('NOW_PLAYING_MOVIES_TITLE')
-      }
-    ]
-  }
-
   if (params && params.query) {
     const {query} = params
-    const searchResultsMovies = await domain.get('search_movies_use_case').execute({query})
+    const searchResultsMovies = await domain
+      .get('search_movies_use_case')
+      .execute({query})
     const totalResults = searchResultsMovies.length
     title = i18n.t('SEARCH_RESULTS', {totalResults, query})
-    return { ...commonProps, movies: searchResultsMovies, title }
+    return {movies: searchResultsMovies, title}
   }
-  
+
   const currentPathname = routeInfo.location.pathname
   let movies = []
   let title = ''
@@ -69,18 +65,27 @@ List.getInitialProps = async ({context, routeInfo}) => {
 
   switch (currentPathname) {
     case '/popular':
-        movies = await domain.get('list_popular_movies_use_case').execute()
-        title = i18n.t('POPULAR_MOVIES_TITLE')
-        currentOption = 'popular'
-        break;
+      movies = await domain.get('list_popular_movies_use_case').execute()
+      title = i18n.t('POPULAR_MOVIES_TITLE')
+      currentOption = 'popular'
+      break
     case '/now_playing':
-        movies = await domain.get('list_now_playing_movies_use_case').execute()
-        title = i18n.t('NOW_PLAYING_MOVIES_TITLE')
-        currentOption = 'now_playing'
-        break;
+      movies = await domain.get('list_now_playing_movies_use_case').execute()
+      title = i18n.t('NOW_PLAYING_MOVIES_TITLE')
+      currentOption = 'now_playing'
+      break
+    case '/top_rated':
+      movies = await domain.get('list_top_movies_use_case').execute()
+      title = i18n.t('TOP_MOVIES_TITLE')
+      currentOption = 'top_rated'
+      break
+    case '/upcoming':
+      movies = await domain.get('list_upcoming_movies_use_case').execute()
+      title = i18n.t('UPCOMING_MOVIES_TITLE')
+      currentOption = 'upcoming'
+      break
   }
-
-  return { ...commonProps, movies, title, currentOption }
+  return {movies, title, currentOption}
 }
 
 export default List

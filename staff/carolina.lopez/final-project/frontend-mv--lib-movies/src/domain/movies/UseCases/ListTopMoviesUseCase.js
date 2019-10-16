@@ -1,6 +1,6 @@
 import {UseCase} from '@s-ui/domain'
 
-export default class ListTopMoviesUseCase extends UseCase {
+export default class TopMoviesUseCase extends UseCase {
   constructor({repository} = {}) {
     super()
     this._repository = repository
@@ -8,7 +8,6 @@ export default class ListTopMoviesUseCase extends UseCase {
 
   async execute() {
     const topMoviesEntities = await this._repository.topMovies()
-    console.log({topMoviesEntities}) // eslint-disable-line
     return topMoviesEntities.map(movieEntity => movieEntity.toJSON())
   }
 }

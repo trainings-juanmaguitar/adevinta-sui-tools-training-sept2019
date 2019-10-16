@@ -7,7 +7,8 @@ const moviesFake = [
     overview: 'Marty gets back to the future...',
     language: 'en-EN',
     release: 1985,
-    posterPath: 'cover.jpg'
+    posterPath: 'cover.jpg',
+    popularity: 1
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ const moviesFake = [
     overview: 'Rocky almost win...',
     language: 'en-EN',
     release: 1976,
-    posterPath: 'cover.jpg'
+    posterPath: 'cover.jpg',
+    popularity: 3
   }
 ]
 
@@ -30,7 +32,7 @@ export default class RawDataMoviesRepository extends MoviesRepository {
     return moviesFake.map(this._movieEntityFactory)
   }
 
-  async nowMovies() {
+  async nowPlayingMovies() {
     return moviesFake.map(this._movieEntityFactory)
   }
 

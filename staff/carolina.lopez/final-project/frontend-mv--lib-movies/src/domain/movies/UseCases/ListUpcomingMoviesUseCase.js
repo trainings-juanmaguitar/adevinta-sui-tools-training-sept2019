@@ -8,7 +8,6 @@ export default class ListUpcomingMoviesUseCase extends UseCase {
 
   async execute() {
     const upcomingMoviesEntities = await this._repository.upcomingMovies()
-    console.log({upcomingMoviesEntities}) // eslint-disable-line
     return upcomingMoviesEntities.map(movieEntity => movieEntity.toJSON())
   }
 }

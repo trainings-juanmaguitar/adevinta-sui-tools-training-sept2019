@@ -6,9 +6,8 @@ export default class SearchMoviesUseCase extends UseCase {
     this._repository = repository
   }
 
-  async execute() {
+  async execute({query}) {
     const searchMoviesEntities = await this._repository.searchMovies({query})
-    console.log({searchMoviesEntities}) // eslint-disable-line
     return searchMoviesEntities.map(movieEntity => movieEntity.toJSON())
   }
 }

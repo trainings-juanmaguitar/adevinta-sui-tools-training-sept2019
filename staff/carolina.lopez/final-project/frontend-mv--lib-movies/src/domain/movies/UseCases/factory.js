@@ -1,6 +1,6 @@
 import MoviesRepositoriesFactory from '../Repositories/factory'
 import ListPopularMoviesUseCase from './ListPopularMoviesUseCase'
-import ListNowMoviesUseCase from './ListNowMoviesUseCase'
+import ListNowPlayingMoviesUseCase from './ListNowPlayingMoviesUseCase'
 import ListTopMoviesUseCase from './ListTopMoviesUseCase'
 import ListUpcomingMoviesUseCase from './ListUpcomingMoviesUseCase'
 import SearchMoviesUseCase from './SearchMoviesUseCase'
@@ -13,8 +13,8 @@ export default class MoviesUseCasesFactory {
       })
     })
 
-  static listNowMoviesUseCase = ({config}) =>
-    new ListNowMoviesUseCase({
+  static listNowPlayingMoviesUseCase = ({config}) =>
+    new ListNowPlayingMoviesUseCase({
       repository: MoviesRepositoriesFactory.httpMoviesRepository({
         config
       })
@@ -41,4 +41,3 @@ export default class MoviesUseCasesFactory {
       })
     })
 }
-// se añade un método estático - se pasa el mismo repositorio de movies

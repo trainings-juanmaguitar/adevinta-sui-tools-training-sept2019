@@ -9,9 +9,11 @@ const useCases = {
   list_popular_movies_use_case: MoviesUseCasesFactory.listPopularMoviesUseCase({
     config
   }),
-  list_now_movies_use_case: MoviesUseCasesFactory.listNowMoviesUseCase({
-    config
-  }),
+  list_now_playing_movies_use_case: MoviesUseCasesFactory.listNowPlayingMoviesUseCase(
+    {
+      config
+    }
+  ),
   list_top_movies_use_case: MoviesUseCasesFactory.listTopMoviesUseCase({
     config
   }),
@@ -20,11 +22,9 @@ const useCases = {
       config
     }
   ),
-  search_movies_use_case: MoviesUseCasesFactory.searchMoviesUseCase(
-    {
+  search_movies_use_case: MoviesUseCasesFactory.searchMoviesUseCase({
     config
-    }
-  )
+  })
 }
 
 const Domain = EntryPointFactory({useCases})

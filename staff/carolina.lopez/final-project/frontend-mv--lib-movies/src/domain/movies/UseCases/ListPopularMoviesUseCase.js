@@ -8,7 +8,6 @@ export default class ListPopularMoviesUseCase extends UseCase {
 
   async execute() {
     const popularMoviesEntities = await this._repository.popularMovies()
-    console.log({popularMoviesEntities}) // eslint-disable-line
     return popularMoviesEntities.map(movieEntity => movieEntity.toJSON())
   }
 }

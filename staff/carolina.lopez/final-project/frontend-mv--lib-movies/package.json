@@ -6,6 +6,7 @@
   "dependencies": {
     "@s-ui/domain": "1",
     "firebase": "^6.6.2",
+    "lint": "^0.7.0",
     "react": "16.9.0",
     "react-dom": "16.9.0"
   },
@@ -16,9 +17,7 @@
   "scripts": {
     "start": "sui-bundler dev",
     "phoenix": "rm -Rf node_modules && rm package-lock.json && npm install --prefer-online",
-    "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "sui-lint js",
-    "lint:sass": "sui-lint sass",
     "lint:js:fix": "sui-lint js --fix"
   },
   "keywords": [],

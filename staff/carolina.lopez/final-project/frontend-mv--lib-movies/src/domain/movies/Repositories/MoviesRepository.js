@@ -5,8 +5,8 @@ export default class MoviesRepository extends Repository {
     throw new Error('[MoviesRepository#popularMovies] mandatory ')
   }
 
-  nowMovies() {
-    throw new Error('[MoviesRepository#nowMovies] mandatory ')
+  nowPlayingMovies() {
+    throw new Error('[MoviesRepository#nowPlayingMovies] mandatory ')
   }
 
   topMovies() {

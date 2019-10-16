@@ -1,29 +1,11 @@
-const options = [
-  {
-    key: 'JOHN',
-    text: 'John Lennon'
-  },
-  {
-    key: 'PAUL',
-    text: 'Paul McCartney'
-  },
-  {
-    key: 'GEORGE',
-    text: 'George Harrison'
-  },
-  {
-    key: 'RINGO',
-    text: 'Ringo Star'
-  }
-]
-
+const LinkLogo = (
+  <span style={{background: 'black', color: 'white'}}>SuperApp</span>
+)
 return (
   <div>
-    <h2>Navbar w/ custom language</h2>
-    <MoleculeNavbar languages={['it-IT']} />
-    <h2>Navbar w/ custom options</h2>
-    <MoleculeNavbar options={options} onChangeOption={console.log}/>
-    <h2>Navbar w/ custom options and current option selected</h2>
-    <MoleculeNavbar options={options} onChangeOption={console.log} currentOption='GEORGE'/>
+    <h2>Navbar </h2>
+    <MoleculeNavbar title={LinkLogo}>
+      <p style={{border: '1px solid red', margin: '0'}}>This is my navbar</p>
+    </MoleculeNavbar>
   </div>
 )
