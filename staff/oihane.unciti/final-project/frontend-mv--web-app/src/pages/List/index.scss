@@ -1,0 +1,12 @@
+@import '../../../../frontend-mv--uilib-components/components/molecule/navbar/src/index';
+@import '../../../node_modules/sui-skylab-molecule-card/lib/index';
+
+.List {
+  display: flex;
+  flex-wrap: wrap;
+  &-item {
+    margin: 10px;
+    width: 300px;
+    list-style: none;
+  }
+}
