@@ -37,8 +37,3 @@ const render = Component =>
     </AppContainer>,
     document.getElementById('root')
   )
-render(Hello)
-
-if (module.hot) {
-  module.hot.accept('./hello', () => render(require('./hello').default))
-}

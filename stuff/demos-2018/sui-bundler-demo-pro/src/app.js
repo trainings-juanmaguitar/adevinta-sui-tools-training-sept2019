@@ -6,6 +6,9 @@ import {AppContainer} from 'react-hot-loader'
 import Hello from './hello'
 
 import Domain from 'domain-demo'
+
+import {register} from '@s-ui/bundler/registerServiceWorker'
+
 const domain = new Domain()
 console.log(domain)
 domain
@@ -20,8 +23,6 @@ import(/* webpackChunkName: "my-chunk-name" */ './foo').then(
     foo()
   }
 )
-
-import {register} from '@s-ui/bundler/registerServiceWorker'
 
 register({
   first: () => window.alert('Content is cached for offline use.'),

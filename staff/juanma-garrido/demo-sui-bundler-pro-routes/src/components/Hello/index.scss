@@ -1,0 +1,9 @@
+$bgcolor: red;
+$color: black;
+
+.Hello {
+  border: 2px solid $color;
+  margin: 30px;
+  color: $color;
+  background: $bgcolor;
+}

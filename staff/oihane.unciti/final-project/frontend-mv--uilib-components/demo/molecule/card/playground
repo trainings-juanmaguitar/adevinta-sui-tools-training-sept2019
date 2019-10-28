@@ -1,0 +1,15 @@
+const coverMovie =
+  'https://ib.hulu.com/user/v3/artwork/6dac47d4-aeb9-4ac3-afb5-6c33ef49c86c?base_image_bucket_name=image_manager&base_image=f460d4cf-22aa-43cd-b0f9-33578e6a794e&size=400x600&format=jpeg';
+
+return (
+  <div>
+    <h2>Basic</h2>
+    <div style={{ width: '200px'}}>
+        <MoleculeCard
+        title="Back to the Future"
+        description="Marty gets back to the future..."
+        image={coverMovie}
+        />
+    </div>
+  </div>
+)

@@ -1,0 +1,11 @@
+const LinkLogo = (
+  <span style={{background: 'black', color: 'white'}}>SuperApp</span>
+)
+return (
+  <div>
+    <h2>Navbar </h2>
+    <MoleculeNavbar title={LinkLogo}>
+      <p style={{border: '1px solid red', margin: '0'}}>This is my navbar</p>
+    </MoleculeNavbar>
+  </div>
+)

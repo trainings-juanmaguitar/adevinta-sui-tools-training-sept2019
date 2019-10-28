@@ -1,0 +1,35 @@
+{
+  "name": "demo-sui-bundler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sui-bundler dev",
+    "lint:js": "sui-lint js",
+    "lint:js:fix": "sui-lint js --fix",
+    "lint:sass": "sui-lint sass",
+    "ssr": "sui-bundler build -C && sui-ssr build -C && node server",
+    "co": "sui-mono commit",
+    "phoenix": "sui-mono phoenix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@s-ui/bundler": "5.29.0",
+    "@s-ui/component-peer-dependencies": "^1.7.0",
+    "@s-ui/lint": "3.9.0",
+    "@s-ui/ssr": "^5.21.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@s-ui/lint/eslintrc.js"
+    ]
+  },
+  "stylelint": {
+    "extends": "./node_modules/@s-ui/lint/stylelint.config.js"
+  },
+  "dependencies": {
+    "@s-ui/mono": "^1.43.0"
+  }
+}
